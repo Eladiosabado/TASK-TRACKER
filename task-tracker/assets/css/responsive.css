@@ -1,0 +1,93 @@
+/* =========================================================
+   Task Tracker — Responsive Rules
+   ========================================================= */
+
+@media (max-width: 960px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 720px) {
+    .app-header {
+        padding: 12px 16px;
+    }
+
+    .app-main {
+        padding: 20px 14px 48px;
+    }
+
+    .toolbar {
+        flex-direction: column;
+    }
+
+    .toolbar input,
+    .toolbar select,
+    .toolbar .search-field {
+        max-width: none;
+    }
+
+    .current-user {
+        display: none;
+    }
+
+    /* Stack the table into cards on small screens */
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tbody tr {
+        margin-bottom: 14px;
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-md);
+        padding: 6px 0;
+    }
+
+    tbody td {
+        border-bottom: none;
+        padding: 8px 14px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 12px;
+        text-align: right;
+    }
+
+    tbody td[data-label]::before {
+        content: attr(data-label);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--color-ink-muted);
+        font-weight: 700;
+        text-align: left;
+    }
+
+    .task-title, .task-desc {
+        text-align: right;
+    }
+
+    .task-actions {
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-card {
+        padding: 28px 22px;
+    }
+
+    .modal-box {
+        max-width: 100%;
+    }
+}
